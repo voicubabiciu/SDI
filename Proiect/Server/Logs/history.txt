@@ -1,0 +1,10 @@
+INFO:[2022-01-13,22|44|55.891]Voicu says>>  Serbus
+INFO:[2022-01-13,22|45|22.112]Voicu says>>  test
+INFO:[2022-01-13,22|45|25.374]Voicu says>>  hey
+INFO:[2022-01-13,22|45|28.645]Voicu says>>  salut
+INFO:[2022-01-13,22|45|31.340]Voicu says>>  ce faci
+INFO:[2022-01-13,22|54|19.481]Voicu says>>  hello lume
+INFO:[2022-01-13,22|54|46.890]Voicu says>>  Salut
+INFO:[2022-01-13,22|54|52.079]Voicu says>>  ai grija
+INFO:[2022-01-13,22|55|15.716]Voicu says>>  ceva
+INFO:[2022-01-13,22|55|24.921]Test says>>  altceva
