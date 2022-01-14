@@ -13,6 +13,7 @@ import java.util.HashMap;
 
 import javax.lang.model.type.NullType;
 
+import Proiect.Client.Commands.CommandsStatuses;
 import Proiect.Server.Commands.Command;
 import Proiect.Server.IOOperations.Logger;
 
@@ -58,10 +59,13 @@ public class TCPClientManager extends Thread implements ITCPListeners {
     @Override
     public void onAuthReceived(ClientModel client, Command<?, NullType> command) {
         try {
-            String clientId = HashCreator.createHash(client.getUsername());
-            client.setId(clientId);
-            activeClients.put(clientId, client);
-            client.write(command.executeCommand(null).toString());
+            String response = command.executeCommand(null).toString();
+            if (CommandsStatuses.valueOf(response.split(":")[1]) == CommandsStatuses.SUCCESS) {
+                String clientId = HashCreator.createHash(client.getUsername());
+                client.setId(clientId);
+                activeClients.put(clientId, client);
+            }
+            client.write(response);
         } catch (IOException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
@@ -70,10 +74,13 @@ public class TCPClientManager extends Thread implements ITCPListeners {
     @Override
     public void onRegisterReceived(ClientModel client, Command<?, NullType> command) {
         try {
-            String clientId = HashCreator.createHash(client.getUsername());
-            client.setId(clientId);
-            activeClients.put(clientId, client);
-            client.write(command.executeCommand(null).toString());
+            String response = command.executeCommand(null).toString();
+            if (CommandsStatuses.valueOf(response.split(":")[1]) == CommandsStatuses.SUCCESS) {
+                String clientId = HashCreator.createHash(client.getUsername());
+                client.setId(clientId);
+                activeClients.put(clientId, client);
+            }
+            client.write(response);
         } catch (IOException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

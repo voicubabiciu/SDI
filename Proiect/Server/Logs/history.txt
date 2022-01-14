@@ -8,3 +8,7 @@ INFO:[2022-01-13,22|54|46.890]Voicu says>>  Salut
 INFO:[2022-01-13,22|54|52.079]Voicu says>>  ai grija
 INFO:[2022-01-13,22|55|15.716]Voicu says>>  ceva
 INFO:[2022-01-13,22|55|24.921]Test says>>  altceva
+INFO:[2022-01-13,23|40|35.736]Test says>>  Hello World
+INFO:[2022-01-13,23|41|24.381]Voicu says>>  Hello New subscriber
+INFO:[2022-01-14,10|21|44.420]Voicu says>>  message
+INFO:[2022-01-14,10|22|18.125]Test1 says>>  test

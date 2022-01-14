@@ -16,38 +16,22 @@ public class HashCreator {
             InvalidKeySpecException,
             NoSuchProviderException {
         int iterations = 1000;
-
         byte[] hash = createPBEHash(password, iterations, salt.getBytes(), 64);
-
-        // prepend iterations and salt to the hash
         return convertToHex(hash);
     }
 
-    // Create hash of password with salt, iterations, and keylength
-    private static byte[] createPBEHash(
-            final String password,
-            final int iterations,
-            final byte[] salt,
-            final int keyLength)
-            throws NoSuchAlgorithmException,
+    private static byte[] createPBEHash(final String password, final int iterations,
+            final byte[] salt, final int keyLength) throws NoSuchAlgorithmException,
             InvalidKeySpecException {
-
         PBEKeySpec spec = new PBEKeySpec(password.toCharArray(),
                 salt, iterations, keyLength * 8);
-
         SecretKeyFactory skf = SecretKeyFactory
                 .getInstance("PBKDF2WithHmacSHA1");
-
         return skf.generateSecret(spec).getEncoded();
     }
 
     public static String createHash(String s) throws NoSuchAlgorithmException {
-        // Static getInstance() method is invoked with the hashing SHA-256
         MessageDigest msgDgst = MessageDigest.getInstance("SHA-256");
-
-        // the digest() method is invoked
-        // to compute the message digest of the input
-        // and returns an array of byte
         return convertToHex(msgDgst.digest(s.getBytes(StandardCharsets.UTF_8)));
     }
 
