@@ -11,7 +11,7 @@ import Proiect.Client.Commands.CommandsStatuses;
 public class ClientApp {
     public static void main(String[] args) {
         try {
-            final TCPClient client = new TCPClient("localhost", 8080);
+            final TCPClient client = new TCPClient("192.168.37.153", 56879);
             client.startClient();
             client.startWriter();
             client.listensToDataStream(new ITCPListeners() {

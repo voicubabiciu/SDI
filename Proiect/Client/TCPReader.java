@@ -24,6 +24,7 @@ class TCPReader extends Thread {
         while (active) {
             try {
                 final String payload = dataInputStream.readUTF();
+                System.out.println(payload);
                 final SupportedCommands command = CommandIdentificator.identify(payload);
                 final String[] parts = payload.split(":");
                 switch (command) {
